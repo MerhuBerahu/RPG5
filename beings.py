@@ -52,7 +52,7 @@ class NPC(Character):
         self.merchant = merchant
 
 
-
+"""
 
 #CHARACTER CREATION
 print("Lets create your Character")
@@ -82,3 +82,5 @@ print(monster1.loot())
     #check level
     #check mainjob
     #check support job
+
+"""
