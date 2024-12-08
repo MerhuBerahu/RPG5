@@ -51,8 +51,7 @@ class NPC(Character):
         self.quests = quests
         self.merchant = merchant
 
-#x = Enemy(goblin,goblin['race_name'],"Cricket",5,white_mage,black_mage,52,"stick")
-#print(x.race_name)
+
 
 
 #CHARACTER CREATION
