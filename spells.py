@@ -16,7 +16,7 @@ class Spell:
         self.modifier_amount = modifier_amount
         self.element_affinity = element_affinity
 
-cure = Spell("Cure")
+#cure = Spell("Cure")
 
 
 
@@ -25,16 +25,25 @@ conn = sqlite3.connect('Database.db')
 
 c = conn.cursor()
 
-def item_by_owned(owned):
-    # Return all results of query
-    c.execute('SELECT * FROM plots spells WHERE whm >= 1')
-    return c.fetchall()
+def searchdb():
+    # Define the SQL query
+    query = "SELECT * FROM spells WHERE whm >= ?"
+    # Execute the query with a parameter
+    c.execute(query, (4,))
+
+    # Fetch all matching rows
+    rows = c.fetchall()
+
+    # Display the results
+    for row in rows:
+        print(row)
+
 
 def print_inventory_names(inventory):
     for i in inventory: #print out the name(index[1] of each item in inventory
         print(i[1])   
 
-inventory = item_by_owned()
+searchdb()
 
 # Return first result of query
 #cur.execute('SELECT species FROM species WHERE taxa="Bird"')
