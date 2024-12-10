@@ -11,7 +11,7 @@ class Job:
 
 whm = Job("White Mage", "Healer", 7, 8,["cure", "Dia"],["Dual Wield","Run"])
 
-print(whm.description)
+#print(whm.description)
 
 
 """

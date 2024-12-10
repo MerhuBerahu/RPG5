@@ -1,4 +1,4 @@
-import sqlite3
+
 
 class Spell:
 
@@ -16,54 +16,4 @@ class Spell:
         self.modifier_amount = modifier_amount
         self.element_affinity = element_affinity
 
-#cure = Spell("Cure")
 
-
-
-# Create a SQL connection to our SQLite database
-conn = sqlite3.connect('Database.db')
-
-c = conn.cursor()
-
-def searchdb():
-    # Define the SQL query
-    query = "SELECT * FROM spells WHERE whm >= ?"
-    # Execute the query with a parameter
-    c.execute(query, (4,))
-
-    # Fetch all matching rows
-    rows = c.fetchall()
-
-    # Display the results
-    for row in rows:
-        print(row)
-
-
-def print_inventory_names(inventory):
-    for i in inventory: #print out the name(index[1] of each item in inventory
-        print(i[1])   
-
-searchdb()
-
-# Return first result of query
-#cur.execute('SELECT species FROM species WHERE taxa="Bird"')
-#cur.fetchone()
-
-# Be sure to close the connection
-conn.close()
-
-
-
-
-
-"""
-#White Mage
-white_mage = {'name': 'White Mage', 'description': 'Healer','hp':7 ,'mp':8 ,'spelllist': {
-'cure': {'name': 'Cure','description': 'Restore\'s HP','level': 1, 'effect': 'healing','amount':2, 'mp_cost': 8, 'cast_time': 3,'modifier':'playerMind','modifier_amount':10,'element': 'lightsday'},
-'dia': {'name': 'Dia','description' : 'Lowers an enemy\'s defense and gradually deals Light elemental damage.','level': 3, 'effect': 'enfeebling','amount':2, 'mp_cost': 7, 'cast_time': 3,'modifier':'enemyMind','modifier_amount':10,'element': 'lightsday'},
-'paralyze': {'name': 'Paralyze','description': 'Paralyzes an enemy.','level': 4, 'effect': 'enfeebling','amount':2, 'mp_cost': 6, 'cast_time': 3,'modifier':'enemyMind','modifier_amount':10,'element': 'lightsday'},
-'banish': {'name': 'Banish','description': 'Deals Light elemental damage to an enemy.','level': 5, 'effect': 'damage','amount':2, 'mp_cost': 15, 'cast_time': 3,'modifier':'playerMind','modifier_amount':10,'element': 'lightsday'},
-'barstonra': {'name': 'Barstonra','description': 'Increases resistance against Earth.','level': 5, 'effect': 'enhancing','amount':2, 'mp_cost': 12, 'cast_time': 1,'modifier':'playerMind','modifier_amount':10,'element': 'windsday'}},
-'abilities': {'rage':{'level': 1, 'effect': 'Damage x2, Defense halved', 'tp_cost': 100, 'cast_time':3,'modifier':'playerStrength'}}, 
-'armourtype': 'robes'}
-"""

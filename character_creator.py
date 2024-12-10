@@ -3,6 +3,7 @@ from races import *
 from utilities import *
 
 
+
 # TODO: pulls races from list of available races, create a function to list and select from there
 
 
@@ -46,9 +47,11 @@ def choose_gender():
     return selected_choice
     
 
-player = Player(choose_race(),choose_gender(),choose_name(),7,'whm', 'blm', 10,"staff",100, 300)
+player = Player(choose_race(),choose_gender(),choose_name(),1,'whm', 'blm', 10,"staff",100, 300)
 
 
-print(f"Welcome {player.name}, it's good to meet you.")
-print(f"You are a {player.sex} {player.race['race_name']}  {player.mainjob}/{player.supportjob} at level {player.level}, you have {player.gold} gold and your invetory only has {player.inventory}")
+#print(f"Welcome {player.name}, it's good to meet you.")
+#print(f"You are a {player.sex} {player.race['race_name']}  {player.mainjob}/{player.supportjob} at level {player.level}, you have {player.gold} gold and your invetory only has {player.inventory}")
+#print(db.query_table('spells',player.mainjob, player.level))
+print_query('spells',player.mainjob, player.level)
 
