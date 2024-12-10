@@ -10,6 +10,7 @@ class Job:
 
 
 whm = Job("White Mage", "Healer", 7, 8,["cure", "Dia"],["Dual Wield","Run"])
+blm = Job("Black Mage", "Elemental damage dealer", 7, 8,["cure", "Dia"],["Dual Wield","Run"])
 
 #print(whm.description)
 

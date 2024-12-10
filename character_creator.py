@@ -46,6 +46,8 @@ def choose_gender():
     selected_choice = gender_choices[selected_index - 1] # minus 1 to get actual index position
     return selected_choice
     
+def choose_starting_job():
+    pass
 
 player = Player(choose_race(),choose_gender(),choose_name(),1,'whm', 'blm', 10,"staff",100, 300)
 
@@ -53,5 +55,12 @@ player = Player(choose_race(),choose_gender(),choose_name(),1,'whm', 'blm', 10,"
 #print(f"Welcome {player.name}, it's good to meet you.")
 #print(f"You are a {player.sex} {player.race['race_name']}  {player.mainjob}/{player.supportjob} at level {player.level}, you have {player.gold} gold and your invetory only has {player.inventory}")
 #print(db.query_table('spells',player.mainjob, player.level))
-print_query('spells',player.mainjob, player.level)
+#print_query('spells',player.mainjob, player.level)
 
+def print_spell_list(mainjob,level):
+    spell_list =  print_query('spells',mainjob,level)
+    return spell_list
+
+spell_list = print_spell_list(player.mainjob, player.level)
+
+print(spell_list.len()-1)
